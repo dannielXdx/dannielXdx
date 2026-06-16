@@ -108,8 +108,6 @@
 <div align="center">
 
 ![GitHub Stats](https://stats.dannielxdx.org/api?username=dannielXdx&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true)
-&nbsp;
-![Top Languages](https://stats.dannielxdx.org/api/top-langs/?username=dannielXdx&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=8)
 
 </div>
 
