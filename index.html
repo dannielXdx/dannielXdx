@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Valverde — CTO & Payments Engineer</title>
+  <meta name="description" content="CTO at Nawipay. Backend engineer specialized in core banking, payment systems, and fintech infrastructure in Latin America.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #07090D;
+      --bg2:       #0C1018;
+      --bg3:       #111720;
+      --border:    #1A2235;
+      --border2:   #243050;
+      --text:      #CDD5E0;
+      --text2:     #4A5C78;
+      --text3:     #7A8FA8;
+      --gold:      #C8A94A;
+      --gold2:     #E8C96A;
+      --gold-dim:  rgba(200,169,74,.10);
+      --gold-glow: rgba(200,169,74,.22);
+      --green:     #3DD68C;
+      --green-dim: rgba(61,214,140,.08);
+      --mono: 'Space Mono', 'Courier New', monospace;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* subtle dot grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(26,34,53,.9) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ambient glow blobs */
+    .ambient {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ambient-1 {
+      width: 600px; height: 600px;
+      background: rgba(200,169,74,.04);
+      top: -200px; right: -100px;
+    }
+    .ambient-2 {
+      width: 500px; height: 500px;
+      background: rgba(61,214,140,.03);
+      bottom: 10%; left: -150px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.1rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(7,9,13,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: var(--mono); font-size: .72rem;
+      color: var(--gold); letter-spacing: .18em;
+      text-transform: uppercase; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: .65rem;
+      color: var(--text2); text-decoration: none;
+      letter-spacing: .12em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ─── SHARED ─── */
+    section { position: relative; z-index: 1; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 2.5rem; }
+
+    .section-label {
+      font-family: var(--mono); font-size: .62rem;
+      color: var(--gold); letter-spacing: .22em;
+      text-transform: uppercase; margin-bottom: .9rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .section-label::after {
+      content: ''; flex: 1; max-width: 48px; height: 1px;
+      background: var(--gold); opacity: .35;
+    }
+    .section-title {
+      font-family: var(--mono);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 700; color: #E2EAF5;
+      letter-spacing: -.025em; line-height: 1.2;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 9rem 2.5rem 7rem;
+    }
+    .hero-inner { max-width: 1080px; margin: 0 auto; width: 100%; }
+
+    .hero-status {
+      display: inline-flex; align-items: center; gap: .55rem;
+      font-family: var(--mono); font-size: .65rem;
+      color: var(--green); letter-spacing: .18em; text-transform: uppercase;
+      margin-bottom: 2.8rem;
+      padding: .3rem .8rem;
+      border: 1px solid rgba(61,214,140,.18);
+      border-radius: 2px;
+      background: var(--green-dim);
+    }
+    .status-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(61,214,140,.4); }
+      50%      { opacity:.7; box-shadow: 0 0 0 5px rgba(61,214,140,0); }
+    }
+
+    .hero-name {
+      font-family: var(--mono);
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 700; color: #EAF0FA;
+      line-height: 1.0; margin-bottom: 1.1rem;
+      letter-spacing: -.03em;
+    }
+    .hero-name .cursor {
+      display: inline-block; width: 3px; height: .8em;
+      background: var(--gold); vertical-align: middle;
+      margin-left: 5px;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .hero-title {
+      font-size: clamp(.95rem, 1.8vw, 1.2rem);
+      font-weight: 300; color: var(--text3);
+      max-width: 580px; line-height: 1.55; margin-bottom: 2.8rem;
+    }
+    .hero-title strong { color: var(--gold); font-weight: 500; }
+
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.8rem; margin-bottom: 3rem;
+    }
+    .hero-meta-item {
+      font-family: var(--mono); font-size: .65rem;
+      color: var(--text2); letter-spacing: .1em;
+      display: flex; align-items: center; gap: .45rem;
+    }
+    .hero-meta-item .val { color: var(--text3); }
+
+    .hero-links { display: flex; flex-wrap: wrap; gap: .9rem; }
+    .btn {
+      font-family: var(--mono); font-size: .68rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      text-decoration: none; padding: .6rem 1.35rem;
+      border: 1px solid; border-radius: 2px;
+      transition: all .18s;
+      display: inline-flex; align-items: center; gap: .45rem;
+    }
+    .btn-primary {
+      border-color: var(--gold); color: var(--gold); background: var(--gold-dim);
+    }
+    .btn-primary:hover {
+      background: rgba(200,169,74,.18);
+      box-shadow: 0 0 18px var(--gold-glow);
+    }
+    .btn-ghost {
+      border-color: var(--border2); color: var(--text3); background: transparent;
+    }
+    .btn-ghost:hover { border-color: var(--text3); color: var(--text); }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 7rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 5rem; align-items: start;
+      margin-top: 3.5rem;
+    }
+    .about-text { font-size: 1rem; color: var(--text3); line-height: 1.8; font-weight: 300; }
+    .about-text p + p { margin-top: 1.2rem; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .stat-item { background: var(--bg2); padding: 1.5rem 1.25rem; }
+    .stat-number {
+      font-family: var(--mono); font-size: 2rem; font-weight: 700;
+      color: var(--gold); line-height: 1; margin-bottom: .35rem;
+    }
+    .stat-label {
+      font-family: var(--mono); font-size: .6rem;
+      color: var(--text2); letter-spacing: .08em; text-transform: uppercase;
+    }
+
+    /* ─── EXPERIENCE ─── */
+    #experience {
+      padding: 7rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 3.5rem;
+    }
+    .exp-card {
+      background: var(--bg2); padding: 2rem 2rem 1.75rem;
+      position: relative; overflow: hidden;
+      transition: background .2s;
+    }
+    .exp-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; width: 2px; height: 100%;
+      background: var(--gold); opacity: 0;
+      transition: opacity .2s;
+    }
+    .exp-card:hover { background: var(--bg3); }
+    .exp-card:hover::before { opacity: 1; }
+
+    .exp-id {
+      font-family: var(--mono); font-size: .58rem;
+      color: var(--text2); letter-spacing: .15em;
+      margin-bottom: .8rem;
+      display: flex; align-items: center; gap: .7rem;
+    }
+    .exp-badge {
+      padding: .12rem .45rem;
+      border: 1px solid rgba(200,169,74,.25); color: var(--gold);
+      font-size: .56rem; letter-spacing: .1em; border-radius: 1px;
+    }
+    .exp-badge.active {
+      border-color: rgba(61,214,140,.3); color: var(--green);
+    }
+
+    .exp-title {
+      font-family: var(--mono); font-size: .92rem; font-weight: 700;
+      color: #E2EAF5; margin-bottom: .7rem; line-height: 1.3;
+    }
+    .exp-desc {
+      font-size: .85rem; color: var(--text3); line-height: 1.7; font-weight: 300;
+    }
+    .exp-tags {
+      margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .4rem;
+    }
+    .exp-tag {
+      font-family: var(--mono); font-size: .58rem;
+      color: var(--text2); padding: .18rem .5rem;
+      background: var(--bg); border: 1px solid var(--border2);
+      letter-spacing: .06em;
+    }
+
+    /* ─── STACK ─── */
+    #stack {
+      padding: 7rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .stack-rows { margin-top: 3.5rem; display: grid; gap: 0; }
+    .stack-row {
+      display: grid; grid-template-columns: 160px 1fr;
+      gap: 2.5rem; align-items: center;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .stack-row:first-child { border-top: 1px solid var(--border); }
+    .stack-cat {
+      font-family: var(--mono); font-size: .63rem;
+      color: var(--gold); letter-spacing: .15em; text-transform: uppercase;
+    }
+    .stack-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .stack-tag {
+      font-family: var(--mono); font-size: .7rem;
+      color: var(--text3); padding: .35rem .85rem;
+      border: 1px solid var(--border2); border-radius: 1px;
+      background: var(--bg2);
+      transition: all .15s; cursor: default; letter-spacing: .04em;
+    }
+    .stack-tag:hover {
+      color: var(--gold);
+      border-color: rgba(200,169,74,.35);
+      background: var(--gold-dim);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 8rem 0 6rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact-eyebrow {
+      font-family: var(--mono); font-size: .62rem;
+      color: var(--text2); letter-spacing: .2em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .contact-headline {
+      font-family: var(--mono);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700; color: #E2EAF5;
+      margin-bottom: 2rem; letter-spacing: -.02em;
+    }
+    .contact-email {
+      font-family: var(--mono); font-size: clamp(.95rem, 2vw, 1.3rem);
+      color: var(--text3); text-decoration: none;
+      border-bottom: 1px solid var(--border2);
+      padding-bottom: .2rem; display: inline-block;
+      margin-bottom: 3rem;
+      transition: color .2s, border-color .2s;
+    }
+    .contact-email:hover { color: var(--gold); border-color: var(--gold); }
+    .contact-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 5rem; }
+    .contact-link {
+      font-family: var(--mono); font-size: .68rem;
+      color: var(--text2); text-decoration: none;
+      letter-spacing: .1em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .contact-link:hover { color: var(--gold); }
+    .footer-note {
+      font-family: var(--mono); font-size: .58rem;
+      color: var(--text2); letter-spacing: .1em; opacity: .45;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider-line {
+      font-family: var(--mono); font-size: .58rem;
+      color: var(--border2); letter-spacing: .05em;
+      text-align: center; margin: 0 0 4rem;
+      overflow: hidden;
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+    .reveal-d4 { transition-delay: .4s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 820px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .container { padding: 0 1.5rem; }
+      #hero { padding: 7rem 1.5rem 5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .stack-row { grid-template-columns: 1fr; gap: .9rem; }
+      #about, #experience, #stack, #contact { padding: 5rem 0; }
+    }
+    @media (max-width: 480px) {
+      .hero-name { font-size: 2.2rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-brand">dannielXdx</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        System Online &nbsp;·&nbsp; Ciudad de México, México
+      </div>
+
+      <h1 class="hero-name">Daniel Valverde<span class="cursor"></span></h1>
+
+      <p class="hero-title">
+        <strong>CTO @ Nawipay</strong> &nbsp;·&nbsp; Backend Engineer &nbsp;·&nbsp;
+        Core Banking &amp; Payments Specialist.<br>
+        Building critical financial infrastructure in Latin America.
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span>EXP://</span><span class="val">5+ years</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>LOC://</span><span class="val">CDMX, México</span>
+        </div>
+        <div class="hero-meta-item">
+          <span>ROLE://</span><span class="val">CTO · Backend Engineer</span>
+        </div>
+      </div>
+
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/dannielxdx/" target="_blank" rel="noopener" class="btn btn-primary">
+          ↗ LinkedIn
+        </a>
+        <a href="https://github.com/dannielXdx" target="_blank" rel="noopener" class="btn btn-ghost">
+          ↗ GitHub
+        </a>
+        <a href="mailto:dannielxdx@outlook.com" class="btn btn-ghost">
+          ↗ Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">01 &nbsp;·&nbsp; About</p>
+        <h2 class="section-title">Building where finance<br>meets infrastructure.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal reveal-d1">
+          <p>
+            Backend engineer with <strong>5+ years</strong> designing and operating financial systems at
+            the intersection of core banking, payment networks, and cloud infrastructure. My work
+            has touched some of Mexico's most critical payment rails — including <strong>SPEI</strong>,
+            the central bank's real-time interbank transfer system — and extended into card processing
+            with <strong>Mastercard</strong> via Dock, LatAm's leading issuer processor and BaaS platform.
+          </p>
+          <p>
+            I've contributed to systems that were later acquired by <strong>PayPal</strong>, helped
+            two companies integrate with <strong>STP</strong>, and currently lead the entire technical
+            function at <strong>Nawipay</strong> as CTO — spanning architecture, infrastructure,
+            security, and product delivery across web, mobile, and backend.
+          </p>
+          <p>
+            Outside of fintech, I'm genuinely interested in <strong>AI and automation</strong> — I build
+            agents and use LLMs to amplify development capacity. I've run Arch Linux for 4 years and
+            believe deeply in understanding the systems you depend on.
+          </p>
+        </div>
+
+        <div class="stats-grid reveal reveal-d2">
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years exp.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">STP integrations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">PayPal acq.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">TXN processed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">02 &nbsp;·&nbsp; Experience</p>
+        <h2 class="section-title">Payment systems<br>at production scale.</h2>
+      </div>
+
+      <div class="exp-grid">
+
+        <div class="exp-card reveal">
+          <div class="exp-id">TXN-001 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">IFPE → PayPal Acquisition</div>
+          <p class="exp-desc">Backend development for an IFPE (Institución de Fondos de Pago Electrónico) that was later acquired by PayPal. Built core financial services within a regulated Mexican payment institution.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Core Banking</span>
+            <span class="exp-tag">IFPE</span>
+            <span class="exp-tag">PayPal</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal reveal-d1">
+          <div class="exp-id">TXN-002 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">SPEI Integration · Banxico</div>
+          <p class="exp-desc">Direct contributor to SPEI integration — Mexico's central bank real-time interbank transfer system operated by Banxico. One of the country's most critical payment rails, handling billions in daily volume.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">SPEI</span>
+            <span class="exp-tag">Banxico</span>
+            <span class="exp-tag">Real-time Transfers</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-id">TXN-003 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">STP — 2 Companies Integrated</div>
+          <p class="exp-desc">Helped two separate companies architect and integrate interbank transfer systems with STP (Sistema de Transferencias y Pagos), enabling domestic fund movement within the Mexican financial system.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">STP</span>
+            <span class="exp-tag">Interbank Transfers</span>
+            <span class="exp-tag">System Integration</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal reveal-d1">
+          <div class="exp-id">TXN-004 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">Mastercard Authorizer · Dock</div>
+          <p class="exp-desc">Built a Mastercard payment authorizer integrated with Dock — LatAm's leading issuer processor and BaaS platform. Full cardholder lifecycle management: purchases, withdrawals, refunds, and balance queries.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Mastercard</span>
+            <span class="exp-tag">Dock BaaS</span>
+            <span class="exp-tag">Authorizer</span>
+            <span class="exp-tag">Card Lifecycle</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-id">TXN-005 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">Scalable Transaction Queuing</div>
+          <p class="exp-desc">Designed and implemented scalable transaction orchestration systems using Redis, RabbitMQ, and Celery — built to handle high-throughput financial pipelines with reliability guarantees in a regulated environment.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Redis</span>
+            <span class="exp-tag">RabbitMQ</span>
+            <span class="exp-tag">Celery</span>
+            <span class="exp-tag">Queue Architecture</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal reveal-d1">
+          <div class="exp-id">TXN-006 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">Security · mTLS · Cryptography</div>
+          <p class="exp-desc">Implemented secure service-to-service communications using mutual TLS (mTLS), applied cryptography, and financial-grade security best practices across payment microservices and API gateways.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">mTLS</span>
+            <span class="exp-tag">Cryptography</span>
+            <span class="exp-tag">Secure APIs</span>
+            <span class="exp-tag">Zero-Trust</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-id">TXN-007 <span class="exp-badge">CONFIRMED</span></div>
+          <div class="exp-title">Infrastructure as Code · AWS</div>
+          <p class="exp-desc">Designed and maintains cloud infrastructure with Terraform on AWS: VPC, VPNs, EKS clusters, ArgoCD GitOps pipelines, IAM, EC2, RDS, and DocumentDB across staging and production environments.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Terraform</span>
+            <span class="exp-tag">AWS EKS</span>
+            <span class="exp-tag">ArgoCD</span>
+            <span class="exp-tag">GitOps</span>
+            <span class="exp-tag">IaC</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal reveal-d1">
+          <div class="exp-id">TXN-008 <span class="exp-badge active">ACTIVE</span></div>
+          <div class="exp-title">AI Agents · CTO @ Nawipay</div>
+          <p class="exp-desc">Currently CTO at Nawipay fintech, leading architecture and delivery. Builds AI agents with OpenClaw, uses Claude to amplify engineering capabilities, and explores LLM tooling and n8n automation as force multipliers.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">OpenClaw</span>
+            <span class="exp-tag">Claude</span>
+            <span class="exp-tag">n8n</span>
+            <span class="exp-tag">AI Agents</span>
+            <span class="exp-tag">CTO</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label">03 &nbsp;·&nbsp; Tech Stack</p>
+        <h2 class="section-title">Full-spectrum<br>technical coverage.</h2>
+      </div>
+
+      <div class="stack-rows">
+
+        <div class="stack-row reveal">
+          <div class="stack-cat">Languages</div>
+          <div class="stack-tags">
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">Dart</span>
+            <span class="stack-tag">Kotlin</span>
+            <span class="stack-tag">PHP</span>
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">HCL</span>
+            <span class="stack-tag">Bash</span>
+          </div>
+        </div>
+
+        <div class="stack-row reveal reveal-d1">
+          <div class="stack-cat">Frameworks</div>
+          <div class="stack-tags">
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Django</span>
+            <span class="stack-tag">Flutter</span>
+            <span class="stack-tag">Laravel</span>
+            <span class="stack-tag">Celery</span>
+          </div>
+        </div>
+
+        <div class="stack-row reveal reveal-d2">
+          <div class="stack-cat">Data &amp; Messaging</div>
+          <div class="stack-tags">
+            <span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">Redis</span>
+            <span class="stack-tag">RabbitMQ</span>
+            <span class="stack-tag">DocumentDB</span>
+          </div>
+        </div>
+
+        <div class="stack-row reveal reveal-d3">
+          <div class="stack-cat">Infrastructure</div>
+          <div class="stack-tags">
+            <span class="stack-tag">Terraform</span>
+            <span class="stack-tag">AWS</span>
+            <span class="stack-tag">Kubernetes</span>
+            <span class="stack-tag">Docker</span>
+            <span class="stack-tag">ArgoCD</span>
+            <span class="stack-tag">EKS</span>
+            <span class="stack-tag">VPC</span>
+            <span class="stack-tag">RDS</span>
+          </div>
+        </div>
+
+        <div class="stack-row reveal reveal-d4">
+          <div class="stack-cat">OS &amp; Tools</div>
+          <div class="stack-tags">
+            <span class="stack-tag">Arch Linux</span>
+            <span class="stack-tag">Manjaro</span>
+            <span class="stack-tag">Debian / Ubuntu</span>
+            <span class="stack-tag">n8n</span>
+            <span class="stack-tag">Git</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="contact-eyebrow reveal">04 &nbsp;·&nbsp; Contact</p>
+      <h2 class="contact-headline reveal reveal-d1">
+        Let's talk payments,<br>infrastructure, or AI.
+      </h2>
+      <a href="mailto:dannielxdx@outlook.com" class="contact-email reveal reveal-d2">
+        dannielxdx@outlook.com
+      </a>
+      <div class="contact-links reveal reveal-d3">
+        <a href="https://www.linkedin.com/in/dannielxdx/" target="_blank" rel="noopener" class="contact-link">
+          LinkedIn
+        </a>
+        <a href="https://github.com/dannielXdx" target="_blank" rel="noopener" class="contact-link">
+          GitHub
+        </a>
+      </div>
+      <p class="footer-note reveal">
+        © 2025 Daniel Valverde Quijano &nbsp;·&nbsp; dannielxdx.org
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
