@@ -6,8 +6,9 @@
 
 *Building critical financial infrastructure in Latin America — from interbank transfer systems to card payment authorizers.*
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-dannielxdx-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dannielxdx/)
+[![Website](https://img.shields.io/badge/dannielxdx.org-000000?style=flat&logo=firefox&logoColor=white)](https://dannielxdx.org)
 [![Email](https://img.shields.io/badge/dannielxdx%40outlook.com-0078D4?style=flat&logo=microsoft-outlook&logoColor=white)](mailto:dannielxdx@outlook.com)
-[![GitHub](https://img.shields.io/badge/@dannielXdx-181717?style=flat&logo=github&logoColor=white)](https://github.com/dannielXdx)
 
 </div>
 
