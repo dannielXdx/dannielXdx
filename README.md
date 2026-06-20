@@ -2,7 +2,7 @@
 
 # Daniel Valverde
 
-### CTO @ Nawicard &nbsp;·&nbsp; Technical Leader &nbsp;·&nbsp; Core Banking & Payments Specialist
+### CTO @ Nawi &nbsp;·&nbsp; Technical Leader &nbsp;·&nbsp; Core Banking & Payments Specialist
 
 *From backend engineer to CTO in five years — I build the systems that move money, and lead the teams that scale them.*
 
@@ -18,8 +18,8 @@
 
 Backend engineer turned **CTO in five years**. I specialize in **core banking and payment systems** — and have the versatility to build virtually any complex system, end to end.
 
-- **CTO at Nawicard** — I lead the technology vision and strategy: cloud architecture on AWS, engineering leadership, custom **AI agents**, and cybersecurity.
-- Rose from **backend engineer → Backend Technical Lead → CTO**, leading the team that built Nawicard's **core banking** platform for **credit-card** operations (secure transactions & fund transfers).
+- **CTO at Nawi** — I lead the technology vision and strategy: cloud architecture on AWS, engineering leadership, custom **AI agents**, and cybersecurity.
+- Rose from **backend engineer → Backend Technical Lead → CTO**, leading the team that built Nawi's **core banking** platform for **credit-card** operations (secure transactions & fund transfers).
 - **Payment rails & banking:** **SPEI** (interbank payments), **STP**, card processing (**Mastercard**), and secure transactional logic.
 - **Beyond payments:** full-stack web (Laravel, Vue, Django), ERP/inventory systems, internal medical systems, and even VR/AR/ML — I build across the stack *and* the problem space.
 - **Cloud & IaC:** **Terraform** on AWS (EKS, VPC, RDS, IAM), Docker, Kubernetes, GitOps.
