@@ -26,6 +26,8 @@ Backend engineer turned **CTO in five years**. I specialize in **core banking an
 - Scalable transaction orchestration with **Redis · RabbitMQ · Celery**; secure comms with **mTLS** and applied cryptography.
 - **AI:** building agents with **OpenClaw** and using **Claude** to amplify engineering.
 
+<sub>Earlier in my career I helped build a fintech (IFPE) that was later acquired by PayPal.</sub>
+
 ---
 
 ## Domains of Expertise
