@@ -1,10 +1,10 @@
 <div align="center">
 
-# Daniel Valverde Quijano
+# Daniel Valverde
 
-### CTO @ Nawipay &nbsp;·&nbsp; Backend Engineer &nbsp;·&nbsp; Core Banking & Payments Specialist
+### CTO @ Nawicard &nbsp;·&nbsp; Technical Leader &nbsp;·&nbsp; Core Banking & Payments Specialist
 
-*Building critical financial infrastructure in Latin America — from interbank transfer systems to card payment authorizers.*
+*From backend engineer to CTO in five years — I build the systems that move money, and lead the teams that scale them.*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-dannielxdx-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dannielxdx/)
 [![Website](https://img.shields.io/badge/dannielxdx.org-000000?style=flat&logo=firefox&logoColor=white)](https://dannielxdx.org)
@@ -16,18 +16,15 @@
 
 ## About Me
 
-5+ years building backend systems for regulated financial environments. My work sits at the intersection of core banking, payment networks, and fintech infrastructure — where reliability, security, and compliance are non-negotiable.
+Backend engineer turned **CTO in five years**. I specialize in **core banking and payment systems** — and have the versatility to build virtually any complex system, end to end.
 
-- Developed backend systems for an **IFPE later acquired by PayPal**
-- Contributor to **SPEI** integration at **Banxico** (Mexico's central bank real-time interbank transfer system)
-- Helped **2 companies** integrate interbank transfer systems with **STP**
-- Built a **Mastercard payment authorizer** integrated with **Dock** — LatAm's leading issuer processor & BaaS platform
-- Cardholder & balance management: purchases, withdrawals, refunds, balance queries
-- Scalable transaction orchestration with **Redis · RabbitMQ · Celery**
-- Secure communications: **mTLS**, applied cryptography, security best practices
-- Infrastructure as Code with **Terraform** on AWS: VPC, VPN, EKS, ArgoCD, IAM, EC2, RDS, DocumentDB
-- AI practitioner: built agents with **OpenClaw**, use **Claude** to amplify development capabilities
-- Currently **CTO** at [**Nawipay**](https://github.com/nawipay)
+- **CTO at Nawicard** — I lead the technology vision and strategy: cloud architecture on AWS, engineering leadership, custom **AI agents**, and cybersecurity.
+- Rose from **backend engineer → Backend Technical Lead → CTO**, leading the team that built Nawicard's **core banking** platform for **credit-card** operations (secure transactions & fund transfers).
+- **Payment rails & banking:** **SPEI** (interbank payments), **STP**, card processing (**Mastercard**), and secure transactional logic.
+- **Beyond payments:** full-stack web (Laravel, Vue, Django), ERP/inventory systems, internal medical systems, and even VR/AR/ML — I build across the stack *and* the problem space.
+- **Cloud & IaC:** **Terraform** on AWS (EKS, VPC, RDS, IAM), Docker, Kubernetes, GitOps.
+- Scalable transaction orchestration with **Redis · RabbitMQ · Celery**; secure comms with **mTLS** and applied cryptography.
+- **AI:** building agents with **OpenClaw** and using **Claude** to amplify engineering.
 
 ---
 
@@ -35,12 +32,13 @@
 
 | Domain | Highlights |
 |--------|-----------|
-| 🏦 **Core Banking** | Payment authorizers, card management, cardholder lifecycle, balance management |
-| 💸 **Interbank Transfers** | SPEI (Banxico), STP — system design and integration |
-| 🔐 **Security** | mTLS, applied cryptography, secure API design, financial compliance |
-| ☁️ **Cloud Infrastructure** | AWS (EKS, VPC, RDS, DocumentDB), Terraform IaC, ArgoCD, GitOps |
-| 🤖 **AI & Automation** | LLM agent development, workflow automation with n8n |
-| 📱 **Full-Stack Fintech** | Backend microservices, web frontends, mobile apps (iOS/Android) |
+| 👑 **Technical Leadership** | Engineer → CTO in 5 years; team building, mentoring, agile, tech roadmap, vendor strategy |
+| 🏦 **Core Banking & Payments** | Card processing (Mastercard), cardholder lifecycle, balances, secure transactional logic |
+| 💸 **Interbank Transfers** | SPEI (Banxico), STP — real-time payment rails |
+| ☁️ **Cloud & IaC** | AWS (EKS, VPC, RDS), Terraform, Docker, Kubernetes, GitOps |
+| 🔐 **Security** | mTLS, applied cryptography, secure API design, compliance |
+| 🤖 **AI & Automation** | AI agents (OpenClaw), LLM tooling, workflow automation with n8n |
+| 🧩 **Versatility** | Full-stack web, distributed systems, ERP, VR/AR/ML — complex systems end to end |
 
 ---
 
@@ -63,6 +61,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat&logo=laravel&logoColor=white)
 ![Celery](https://img.shields.io/badge/Celery-37814A?style=flat&logo=celery&logoColor=white)
