@@ -20,7 +20,7 @@ Backend engineer turned **CTO in five years**. I specialize in **core banking an
 
 - **CTO at Nawi** — I lead the technology vision and strategy: cloud architecture on AWS, engineering leadership, custom **AI agents**, and cybersecurity.
 - Rose from **backend engineer → Backend Technical Lead → CTO**, leading the team that built Nawi's **core banking** platform for **credit-card** operations (secure transactions & fund transfers).
-- **Payment rails & banking:** **SPEI** (interbank payments), **STP**, card processing (**Mastercard**), and secure transactional logic.
+- **Payment rails & banking:** **SPEI** (interbank payments), **STP**, **ASP**, card processing (**Mastercard**), and secure transactional logic.
 - **Beyond payments:** full-stack web (Laravel, Vue, Django), ERP/inventory systems, internal medical systems, and even VR/AR/ML — I build across the stack *and* the problem space.
 - **Cloud & IaC:** **Terraform** on AWS (EKS, VPC, RDS, IAM), Docker, Kubernetes, GitOps.
 - Scalable transaction orchestration with **Redis · RabbitMQ · Celery**; secure comms with **mTLS** and applied cryptography.
@@ -36,7 +36,7 @@ Backend engineer turned **CTO in five years**. I specialize in **core banking an
 |--------|-----------|
 | 👑 **Technical Leadership** | Engineer → CTO in 5 years; team building, mentoring, agile, tech roadmap, vendor strategy |
 | 🏦 **Core Banking & Payments** | Card processing (Mastercard), cardholder lifecycle, balances, secure transactional logic |
-| 💸 **Interbank Transfers** | SPEI (Banxico), STP — real-time payment rails |
+| 💸 **Interbank Transfers** | SPEI (Banxico), STP, ASP — real-time payment rails |
 | ☁️ **Cloud & IaC** | AWS (EKS, VPC, RDS), Terraform, Docker, Kubernetes, GitOps |
 | 🔐 **Security** | mTLS, applied cryptography, secure API design, compliance |
 | 🤖 **AI & Automation** | AI agents (OpenClaw), LLM tooling, workflow automation with n8n |
